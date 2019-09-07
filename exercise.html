@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="input something Word" id="text">
+<button type="button" onclick="checkPalindrome()">Check</button>
+<script>
+    function checkPalindrome() {
+        let check=true;
+        let instead = document.getElementById("text").value;
+        if (instead.length % 2 == 0) {
+for (let i=0;i<(instead.length/2);i++){
+    if(instead.charAt(i)!==instead.charAt(instead.length-i-1)) {
+        check = false;
+        break;
+    }
+        /*else {
+        check=false;
+    }*/
+
+        }
+        } else if (instead.length % 2 != 0) {
+            let a=(instead.length-1)/2;
+for (let i=0;i<a;i++){
+    if(instead.charAt(i)!==instead.charAt(instead.length-i-1)) {
+        check = false;
+        break;
+    }
+}
+        }
+        if(check===true){
+            alert("Ok! It's a palindrome word");
+        }else {
+            alert("Sorry! It's not a palindrome word");
+        }
+    }
+</script>
+</body>
+</html>
